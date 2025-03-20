@@ -1,0 +1,158 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #007979; /* Siempre mantiene este color */
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Encabezado fijo con menú de navegación */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+header .header-content {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#counter-container {
+    font-size: 14px;
+}
+
+/* Contenedor principal */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 100px auto 40px auto; /* Se aumenta el margen superior para no solapar el header */
+    background: white; /* Modo claro */
+    color: #333;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Botón de cambio de tema */
+.theme-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    animation: slideIn 1s ease-out;
+}
+
+.theme-button:hover {
+    background: #444;
+    transform: scale(1.05);
+}
+
+/* Botones personalizados */
+.custom-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #2980B9;
+    color: #FFF;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-out;
+}
+
+.custom-button:hover {
+    background-color: #3498DB;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.custom-button:active {
+    background-color: #1C6E9C;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Imágenes */
+img {
+    display: block;
+    max-width: 100%;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1.5s ease-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Animaciones clave */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Modo oscuro SOLO EN EL CONTENEDOR */
+body:has(#theme-toggle:checked) .container {
+    background: #222; /* Cambia a oscuro */
+    color: #ffffff; /* Texto en blanco */
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+body:has(#theme-toggle:checked) .theme-button {
+    background: white;
+    color: black;
+}
+
+body:has(#theme-toggle:checked) h1, 
+body:has(#theme-toggle:checked) h2, 
+body:has(#theme-toggle:checked) h3, 
+body:has(#theme-toggle:checked) p {
+    color: white;
+}
+.small-img {
+    width: 300px; /* Ajusta el tamaño deseado */
+    height: auto; /* Mantiene la proporción */
+    display: block;
+    margin: auto;
+}
